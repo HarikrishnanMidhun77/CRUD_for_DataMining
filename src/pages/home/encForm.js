@@ -20,7 +20,7 @@ export default function EncForm() {
 
   const [description, setDescription] = useState("");
   const [authorName, setAuthorName] = useState("");
-  const [desgination, setDesgination] = useState("");
+  const [designation, setdesignation] = useState("");
 
   const [aboutme, setAboutme] = useState("");
   const [email, setEmail] = useState("");
@@ -44,7 +44,7 @@ export default function EncForm() {
       keyWord: keyWord,
       description: description,
       authorName: authorName,
-      desgination: desgination,
+      designation: designation,
       aboutme: aboutme,
       email: email,
       phone: phone,
@@ -60,6 +60,9 @@ export default function EncForm() {
   return (
     <div>
       <a href="/allBlogs">View All Blogs</a>
+      <a href="/" style={{ paddingLeft: "10px" }}>
+        Add new Blog
+      </a>
       <h1>Add Blog</h1>
       <Form onSubmit={handleSubmit} className="width-auto">
         <FormGroup>
@@ -140,15 +143,15 @@ export default function EncForm() {
           />
         </FormGroup>
         <FormGroup>
-          <Label for="desgination">desgination</Label>
+          <Label for="designation">designation</Label>
 
           <Input
             type="text"
-            value={desgination}
-            onChange={(e) => setDesgination(e.target.value)}
-            name="desgination"
-            id="desgination"
-            placeholder="desgination"
+            value={designation}
+            onChange={(e) => setdesignation(e.target.value)}
+            name="designation"
+            id="designation"
+            placeholder="designation"
           />
         </FormGroup>
 

@@ -23,7 +23,7 @@ export default function EditBlog() {
 
   const [description, setDescription] = useState("");
   const [authorName, setAuthorName] = useState("");
-  const [desgination, setDesgination] = useState("");
+  const [designation, setdesignation] = useState("");
 
   const [aboutme, setAboutme] = useState("");
   const [email, setEmail] = useState("");
@@ -47,7 +47,7 @@ export default function EditBlog() {
         setKeyWord(b.keyWord);
         setDescription(b.description);
         setAuthorName(b.authorName);
-        setDesgination(b.desgination);
+        setdesignation(b.designation);
         setAboutme(b.aboutme);
         setEmail(b.email);
         setPhone(b.phone);
@@ -65,7 +65,7 @@ export default function EditBlog() {
       keyWord: keyWord,
       description: description,
       authorName: authorName,
-      desgination: desgination,
+      designation: designation,
       aboutme: aboutme,
       email: email,
       phone: phone,
@@ -168,15 +168,15 @@ export default function EditBlog() {
               />
             </FormGroup>
             <FormGroup>
-              <Label for="desgination">desgination</Label>
+              <Label for="designation">designation</Label>
 
               <Input
                 type="text"
-                value={desgination}
-                onChange={(e) => setDesgination(e.target.value)}
-                name="desgination"
-                id="desgination"
-                placeholder="desgination"
+                value={designation}
+                onChange={(e) => setdesignation(e.target.value)}
+                name="designation"
+                id="designation"
+                placeholder="designation"
               />
             </FormGroup>
 
