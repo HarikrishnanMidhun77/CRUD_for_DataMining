@@ -83,7 +83,7 @@ export default function EditStock() {
           className="col-centered d-flex justify-content-center"
         >
           <Form onSubmit={handleSubmit} className="width-auto">
-            <a href="/allStocks">View All Stocks</a>
+            <a href="/">View All Stocks</a>
             <h1>Add Stock</h1>
             <FormGroup>
               <Label for="name">Name</Label>
