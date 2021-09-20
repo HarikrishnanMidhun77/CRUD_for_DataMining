@@ -5,42 +5,35 @@ import axios from "../../defaults/axiosConf";
 import Spinner from "./Spinner";
 import { useParams } from "react-router-dom";
 
-export default function ShowBlog() {
-  const [blogObj, setBlogObj] = useState(null);
+export default function ShowStock() {
+  const [stockObj, setStockObj] = useState(null);
   var rows;
   const params = useParams();
   console.log(`params`, params);
   useEffect(() => {
     axios
-      .post("api/blog/getBlog", { id: params.id })
+      .post("api/stock/getStock", { id: params.id })
       .then((res) => {
         console.log("data", res);
-        setBlogObj(res.data[0]);
+        setStockObj(res.data[0]);
       })
       .catch((err) => {});
   }, []);
-  if (blogObj == null) {
+  if (stockObj == null) {
     rows = <Spinner />;
   } else {
-    console.log(`blogObj`, blogObj);
-    if (Object.keys(blogObj).length > 0) {
+    console.log(`stockObj`, stockObj);
+    if (Object.keys(stockObj).length > 0) {
       rows = (
         <>
-          <h1>{blogObj.title}</h1>
-          <h6>Published : {blogObj.publishedDate}</h6>
-          <h6>Keyword : {blogObj.Keyword}</h6>
-          <h6>ID : {blogObj._id}</h6>
-
-          <p>{blogObj.preDesc}</p>
-          <p>{blogObj.description}</p>
-
-          <h1>About the author</h1>
-          <h6>Name : {blogObj.authorName}</h6>
-          <h6>Designation : {blogObj.designation}</h6>
-          <h6>Email : {blogObj.email}</h6>
-          <h6>Phone : {blogObj.phone}</h6>
-          <h6>gender : {blogObj.gender}</h6>
-          <h6>about me : {blogObj.aboutme}</h6>
+          <h1>{stockObj.name}</h1>
+          <h6>Latest Price : {stockObj.latest_price}</h6>
+          <h6>Previous Price : {stockObj.previous_price}</h6>
+          <h6>Low : {stockObj.low}</h6>
+          <h6>High : {stockObj.high}</h6>
+          <h6>Percentage : {stockObj.percentage}</h6>
+          <h6>Time : {stockObj.time}</h6>
+          <h6>Date : {stockObj.date}</h6>
         </>
       );
     }
@@ -50,6 +43,7 @@ export default function ShowBlog() {
     <>
       <Row className="pt-4">
         <div className="col-centered">
+          <a href="/">View All Stocks</a>
           {/* <Col sm="12" md="6" lg="6" className="col-centered">
           <div className="col-centered">
            

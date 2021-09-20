@@ -1,7 +1,7 @@
-import CryptHome from "./pages/home/crypt-home";
-import ViewBlog from "./pages/home/viewBlog";
-import ShowBlog from "./pages/home/showBlog";
-import EditBlog from "./pages/home/editBlog";
+import BasicPage from "./pages/home/basic-page";
+import ViewStock from "./pages/home/viewStock";
+import ShowStock from "./pages/home/showStock";
+import UpdateStock from "./pages/home/updateStock";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,21 +9,21 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact render={(props) => <CryptHome {...props} />} />
+        <Route path="/" exact render={(props) => <ViewStock {...props} />} />
         <Route
-          path="/allBlogs"
+          path="/createStock"
           exact
-          render={(props) => <ViewBlog {...props} />}
+          render={(props) => <BasicPage {...props} />}
         />
         <Route
-          path="/blog/:id"
+          path="/stock/:id"
           exact
-          render={(props) => <ShowBlog {...props} />}
+          render={(props) => <ShowStock {...props} />}
         />
         <Route
-          path="/editBlog/:id"
+          path="/updateStock/:id"
           exact
-          render={(props) => <EditBlog {...props} />}
+          render={(props) => <UpdateStock {...props} />}
         />
       </Switch>
     </BrowserRouter>
