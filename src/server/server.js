@@ -18,7 +18,6 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get("/", (req, res) => res.send("Hello world by Hari from iGen"));
-app.listen(port, () => console.log(`Server is running on Port ${port}`));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
@@ -26,5 +25,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "client", "build", "index.html"));
   });
 }
+app.listen(port, () => console.log(`Server is running on Port ${port}`));
 
 app.use("/api/stock", stock);
