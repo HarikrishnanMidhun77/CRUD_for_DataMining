@@ -17,7 +17,6 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
 
-app.get("/", (req, res) => res.send("Hello world by Hari from iGen"));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
@@ -26,5 +25,6 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 app.listen(port, () => console.log(`Server is running on Port ${port}`));
+app.get("/", (req, res) => res.send("Hello world by Hari from iGen"));
 
 app.use("/api/stock", stock);
