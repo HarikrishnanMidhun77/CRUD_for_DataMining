@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./home.css";
-import { Row, Col, Table } from "reactstrap";
+import { Row, Col, Table, Button } from "reactstrap";
 import axios from "../../defaults/axiosConf";
 import Spinner from "./Spinner";
 import { Link } from "react-router-dom";
@@ -46,7 +46,9 @@ export default function ViewStock() {
               </Link>
             </td>
             <td>
-              <button
+              <Button
+                outline
+                color="danger"
                 onClick={() => {
                   Swal.fire({
                     title: "Are you sure?",
@@ -75,7 +77,7 @@ export default function ViewStock() {
                 }}
               >
                 Delete
-              </button>
+              </Button>
               {/* <Link to={"/deleteStock/" + b._id} className="btn btn-primary">
                 Delete
               </Link> */}
@@ -88,7 +90,10 @@ export default function ViewStock() {
 
   return (
     <>
-      <Row className="pt-4">
+      <h2 style={{ display: "table", marginTop: "25px", margin: "0 auto" }}>
+        <b>S&P 500</b> STOCKS
+      </h2>
+      <Row className="pt-4 pb-4 pl-4 pr-4">
         <div className="col-centered">
           {/* <Col sm="12" md="6" lg="6" className="col-centered">
           <div className="col-centered">
@@ -107,7 +112,7 @@ export default function ViewStock() {
           </div>
         </Col> */}
 
-          <Table>
+          <Table striped>
             <thead>
               <tr>
                 <th>#</th>
@@ -126,10 +131,15 @@ export default function ViewStock() {
             </thead>
             <tbody>{rows}</tbody>
           </Table>
-
-          <Link to={"/createStock"} className="btn btn-primary">
-            Create Stock
-          </Link>
+          <div class="row justify-content-center">
+            <Link
+              to={"/createStock"}
+              className="btn btn-primary"
+              style={{ width: "25%", float: "" }}
+            >
+              Create Stock
+            </Link>
+          </div>
         </div>
       </Row>
     </>
