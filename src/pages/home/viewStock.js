@@ -90,11 +90,18 @@ export default function ViewStock() {
 
   return (
     <>
-      <h2 style={{ display: "table", marginTop: "25px", margin: "0 auto" }}>
-        <b>S&P 500</b> STOCKS
-      </h2>
       <Row className="pt-4 pb-4 pl-4 pr-4">
         <div className="col-centered">
+          <h2
+            style={{
+              display: "table",
+              marginTop: "50px",
+              marginBottom: "25px",
+              margin: "0 auto",
+            }}
+          >
+            <b>S&P 500</b> STOCKS
+          </h2>
           {/* <Col sm="12" md="6" lg="6" className="col-centered">
           <div className="col-centered">
            
